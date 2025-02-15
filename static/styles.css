@@ -105,6 +105,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     padding: 15px;
     border-radius: 10px;
+    padding-bottom: 30px;
 }
 
 /* 영상 리스트 행 */
@@ -206,13 +207,6 @@ footer {
         padding-bottom: 56.25%;
     }
 
-    /* 모바일에서는 세로 정렬 */
-    .video-row {
-        flex-wrap: wrap; /* 모바일에서도 가로 2개 */
-    }
-    .video-container-performance {
-        width: 45%; /* 모바일에서 조금 더 줄여서 여백 확보 */
-        padding-bottom: 25%;
     }
 }
 
@@ -241,12 +235,4 @@ footer {
         margin-top: -5px;
     }
 
-    /* 📌 작은 모바일에서도 영상 크기 조절 */
-    .video-container {
-        width: 100%;
-    }
-    .video-container-performance {
-        width: 50%; /* 작은 모바일에서도 가로 2개 */
-        padding-bottom: 28%;
-    }
 }

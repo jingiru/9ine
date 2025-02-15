@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("댄스 동아리 홈페이지가 로드되었습니다!");
 });
 
+function goHome() {
+    window.location.href = "/home";  // Flask 라우트로 이동
+}
+
+
 // 🔐 회원 인증 코드 입력 및 검증
 function requestAccess() {
     let code = prompt("회원 인증 코드를 입력하세요:");

@@ -153,6 +153,31 @@ body {
     border-radius: 10px;
 }
 
+
+.button-container {
+    display: flex;
+    gap: 10px;  /* 버튼 사이 간격 */
+    margin-top: 15px;
+    justify-content: center; /* 버튼 중앙 정렬 */
+}
+
+/* HOME 버튼 스타일 */
+.home-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #3498db;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.home-btn:hover {
+    background: #2980b9;
+}
+
 /* 전체 영상 보기 버튼 */
 .view-all-btn {
     display: inline-block;
@@ -169,6 +194,10 @@ body {
 .view-all-btn:hover {
     background: #ff5f73;
 }
+
+
+
+
 
 /* 푸터 */
 footer {

@@ -117,12 +117,30 @@ body {
 }
 
 /* 유튜브 영상 크기 반응형 */
-.video-container {
+.video-container-performance {
     width: 48%; /* 가로로 2개씩 배치 */
     position: relative;
     padding-bottom: 27%; /* 16:9 비율 유지 */
     height: 0;
 }
+
+.video-container-performance iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.video-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 30px auto; /* 위아래 여백 추가 */
+    position: relative;
+    padding-bottom: 35%; /* 16:9 비율 유지 */
+    height: 0;
+}
+
 
 .video-container iframe {
     position: absolute;

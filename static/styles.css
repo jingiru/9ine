@@ -107,20 +107,19 @@ body {
     border-radius: 10px;
 }
 
-/* 가로 정렬을 위한 영상 행 */
+/* 영상 리스트 행 */
 .video-row {
     display: flex;
     justify-content: center;
-    gap: 20px; /* 영상 간 간격 */
-    flex-wrap: wrap; /* 반응형 적용 */
-    margin-bottom: 10px;
+    gap: 10px; /* 영상 간 간격 */
+    flex-wrap: nowrap; /* 줄바꿈 방지 */
 }
 
 /* 유튜브 영상 크기 반응형 */
 .video-container-performance {
-    width: 48%; /* 가로로 2개씩 배치 */
+    width: 50%; /* 두 개씩 배치 */
     position: relative;
-    padding-bottom: 27%; /* 16:9 비율 유지 */
+    padding-bottom: 28%; /* 16:9 비율 유지 */
     height: 0;
 }
 
@@ -132,6 +131,8 @@ body {
     height: 100%;
     border-radius: 10px;
 }
+
+
 .video-container {
     width: 80%;
     max-width: 800px;
@@ -207,8 +208,11 @@ footer {
 
     /* 모바일에서는 세로 정렬 */
     .video-row {
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap; /* 모바일에서도 가로 2개 */
+    }
+    .video-container-performance {
+        width: 45%; /* 모바일에서 조금 더 줄여서 여백 확보 */
+        padding-bottom: 25%;
     }
 }
 
@@ -240,5 +244,9 @@ footer {
     /* 📌 작은 모바일에서도 영상 크기 조절 */
     .video-container {
         width: 100%;
+    }
+    .video-container-performance {
+        width: 50%; /* 작은 모바일에서도 가로 2개 */
+        padding-bottom: 28%;
     }
 }

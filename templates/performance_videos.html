@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9ine | 공연 영상</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="teamname">공연 영상</h1>
+        <a href="https://www.youtube.com/playlist?list=PL1234567890" target="_blank" class="view-all-btn">전체 영상 페이지(회원 전용)</a>
+        <div class="playlist-container">
+
+            <!-- 2024년 공연 -->
+            <div class="playlist">
+                <h2>📅 2024년 공연</h2>
+                <div class="video-row">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/pU7b1pv-fqs" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/E7-TbeuoF1s" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 2023년 공연 -->
+            <div class="playlist">
+                <h2>📅 2023년 공연</h2>
+                <div class="video-row">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/8F7JjqvQNHY" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/hcncMvubVII" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2022년 공연 -->
+            <div class="playlist">
+                <h2>📅 2022년 공연</h2>
+                <div class="video-row">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/R3sAs4oRm2o" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/FpOYSV1D350" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>&copy; 2025 대전교직원댄스동호회 9ine</p>
+            <p>All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

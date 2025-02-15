@@ -3,61 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>댄스 동아리 - 홈</title>
-    <link rel="stylesheet" href="static/styles.css">
-    <script defer src="static/script.js"></script>
+    <title>9ine | 메인 페이지</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 <body>
-    <header>
-        <div class="logo">DANCE CREW</div>
-        <nav>
-            <ul>
-                <li><a href="#about">소개</a></li>
-                <li><a href="#videos">연습 영상</a></li>
-                <li><a href="#performances">공연 영상</a></li>
-                <li><a href="#community">커뮤니티</a></li>
-                <li><a href="#contact">섭외 요청</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section class="hero">
-        <h1>Welcome to DANCE CREW</h1>
-        <p>댄스로 하나되는 우리, 함께 만들어가는 무대!</p>
-        <a href="#about" class="btn">동아리 소개 보기</a>
-    </section>
-    
-    <section id="about" class="content">
-        <h2>동아리 소개</h2>
-        <p>우리 댄스 동아리는 열정과 개성을 존중하며, 다양한 퍼포먼스를 선보이는 팀입니다. 다양한 장르의 댄스를 배우고, 무대를 통해 성장하는 경험을 제공합니다.</p>
-    </section>
-    
-    <section id="videos" class="content">
-        <h2>연습 영상</h2>
-        <p>우리의 연습 과정을 확인하세요. 일부 영상은 회원 전용입니다.</p>
-        <a href="videos.html" class="btn">연습 영상 보러 가기</a>
-    </section>
-    
-    <section id="performances" class="content">
-        <h2>공연 영상</h2>
-        <p>우리의 무대를 감상하세요. 일부 영상은 회원 전용입니다.</p>
-        <a href="performances.html" class="btn">공연 영상 보러 가기</a>
-    </section>
-    
-    <section id="community" class="content">
-        <h2>커뮤니티</h2>
-        <p>동아리 활동에 대한 소통의 장! 방명록과 자유게시판에서 이야기를 나누세요.</p>
-        <a href="community.html" class="btn">게시판으로 이동</a>
-    </section>
-    
-    <section id="contact" class="content">
-        <h2>공연 섭외 요청</h2>
-        <p>우리 팀을 섭외하고 싶다면 문의해주세요.</p>
-        <a href="contact.html" class="btn">섭외 요청하기</a>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 DANCE CREW. All rights reserved.</p>
-    </footer>
+    <div class="container">
+        <div class="teamname">대전교직원댄스동호회 9ine</div>
+        <!-- 팀 소개 문구 추가 -->
+        <p class="team-description">
+            <strong>누구나 나인 상관없이 춤을 출 수 있다</strong>라는 모토로<br>
+            8년째 춤을 추고 있는 대전의 유일한 교직원 댄스팀
+        </p>
+        
+        <div class="grid">
+            <section id="performance" class="section" onclick="location.href='{{ url_for('performance_videos') }}'">
+                <h2 class="section-title">공연 영상</h2>
+                <p>일부 영상 회원 전용</p>
+            </section>
+            
+            <section id="practice" class="section" onclick="location.href='{{ url_for('practice_videos') }}'">
+                <h2 class="section-title">연습 영상</h2>
+                <p>일부 영상 회원 전용</p>
+            </section>
+            
+            <section id="community" class="section" onclick="location.href='{{ url_for('board') }}'">
+                <h2 class="section-title">커뮤니티</h2>
+                <p>방명록 & 자유게시판</p>
+            </section>
+            
+            <section id="contact" class="section" onclick="location.href='{{ url_for('contact') }}'">
+                <h2 class="section-title">공연 섭외 요청</h2>
+                <p>Contact Us</p>
+            </section>
+        </div>
+
+        <!-- 유튜브 영상 추가 -->
+        <div class="video-container">
+            <iframe 
+                width="560" height="315"
+                src="https://www.youtube.com/embed/Hkk_9pbz8VY" 
+                title="YouTube video player" 
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 대전교직원댄스동호회 9ine</p>
+            <p>All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>

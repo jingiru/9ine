@@ -237,4 +237,8 @@ footer {
         margin-top: -5px;
     }
 
+    /* 📌 작은 모바일에서도 영상 크기 조절 */
+    .video-container {
+        width: 100%;
+    }
 }

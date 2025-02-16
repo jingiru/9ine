@@ -773,8 +773,8 @@ footer {
     }
 
     .member-video-container {
-        width: 100%; /* 모바일에서는 전체 너비 */
-        height: 200px; /* 🎯 한 번에 2개씩 보이도록 고정 */
+        width: 96%; /* 모바일에서는 전체 너비 */
+        height: 260px; /* 🎯 한 번에 2개씩 보이도록 고정 */
     }
     .form-container iframe {
         width: 100%;
@@ -882,7 +882,7 @@ footer {
 
     .member-video-container {
         width: 96%;
-        height: 200px;
+        height: 240px;
         margin: 0 auto;
     }
 

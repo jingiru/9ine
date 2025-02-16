@@ -488,74 +488,19 @@ body {
 /* ======== contact.html CSS ======== */
 
 
-/* 🎤 Contact Form 스타일 */
-.contact-form {
-    display: flex;
-    flex-direction: column;
+/* Google Form을 포함하는 컨테이너 */
+.form-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px; /* 최대 너비 제한 */
     margin: 0 auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-}
-
-/* 🎯 입력 필드 */
-.contact-form label {
-    text-align: left;
-    margin-top: 10px;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-.contact-input,
-.contact-textarea {
-    width: calc(100% - 20px); /* 🔹 양쪽 패딩 고려 */
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    background: #fff;
-    color: #000;
-}
-
-/* 📅 날짜 입력 필드 스타일 */
-.contact-input[type="date"] {
-    cursor: pointer;
-}
-
-/* ✅ 전송 버튼 */
-.contact-button {
-    background-color: #e74a57;
-    color: white;
-    font-size: 18px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background 0.3s ease;
-}
-
-.contact-button:hover {
-    background-color: #ff5f73;
-}
-
-/* 📢 성공 & 오류 메시지 */
-.contact-message {
-    display: none;
-    font-weight: bold;
     text-align: center;
-    margin-top: 15px;
 }
 
-.success-message {
-    color: green;
-}
-
-.error-message {
-    color: red;
+/* iframe을 부모 컨테이너에 맞추기 */
+.form-container iframe {
+    width: 100%;
+    height: 1500px; /* Google Forms의 높이 조정 */
+    border: none;
 }
 
 
@@ -682,7 +627,6 @@ footer {
         width: 100%; /* 모바일에서는 전체 너비 */
         height: 200px; /* 🎯 한 번에 2개씩 보이도록 고정 */
     }
-
 
 }
 

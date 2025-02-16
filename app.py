@@ -6,8 +6,8 @@ app = Flask(__name__)
 
 SMTP_SERVER = "smtp.gmail.com"  # 본인의 SMTP 서버 사용 (hanmail은 smtp.daum.net)
 SMTP_PORT = 587
-EMAIL_SENDER = "your_email@gmail.com"  # 본인의 이메일
-EMAIL_PASSWORD = "your_email_password"  # 앱 비밀번호 사용 (일반 비밀번호 X)
+EMAIL_SENDER = "skyjjw79@gmail.com"  # 본인의 이메일
+EMAIL_PASSWORD = "eodeod1234"  # 앱 비밀번호 사용 (일반 비밀번호 X)
 EMAIL_RECEIVER = "skyjjw79@hanmail.net"  # 공연 섭외 요청 받을 이메일
 
 
@@ -102,7 +102,7 @@ def send_email():
     except Exception as e:
         print(f"Error: {e}")
         return jsonify(success=False)
-        
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

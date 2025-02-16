@@ -10,6 +10,9 @@ body {
     font-family: Arial, sans-serif;
 }
 
+
+/* index.html CSS */
+
 /* 컨테이너 */
 .container {
     width: 90%;
@@ -87,12 +90,6 @@ body {
     filter: brightness(1.1);
 }
 
-
-
-
-
-
-/* ✅ PC에서 2x2 유지, 모바일에서는 1열 자동 적용 */
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -136,56 +133,6 @@ body {
     transform: scale(1.03);
 }
 
-/* 연도별 재생목록 컨테이너 */
-.playlist-container {
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-/* 각 연도의 공연 리스트 */
-.playlist {
-    width: 100%;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: 10px;
-    padding-bottom: 30px;
-}
-
-
-
-
-/* 영상 리스트 행 */
-.video-row {
-    display: flex;
-    justify-content: center;
-    gap: 10px; /* 영상 간 간격 */
-    flex-wrap: nowrap; /* 줄바꿈 방지 */
-}
-
-/* 유튜브 영상 크기 반응형 */
-.video-container-performance {
-    width: 50%; /* 두 개씩 배치 */
-    position: relative;
-    padding-bottom: 28%; /* 16:9 비율 유지 */
-    height: 0;
-}
-
-.video-container-performance iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
-
-
 .video-container {
     width: 100%;
     max-width: 800px;
@@ -194,7 +141,6 @@ body {
     padding-bottom: 35%; /* 16:9 비율 유지 */
     height: 0;
 }
-
 
 .video-container iframe {
     position: absolute;
@@ -206,6 +152,21 @@ body {
 }
 
 
+
+/* ======== performance_videos.html CSS ======== */
+
+.performance-videos-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #ffffff;
+    text-align: center;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+/* 홈 버튼, 회원 전용 버튼 */
 .button-container {
     display: flex;
     gap: 10px;  /* 버튼 사이 간격 */
@@ -248,9 +209,72 @@ body {
 }
 
 
+/* 연도별 재생목록 컨테이너 */
+.playlist-container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
 
+/* 각 연도의 공연 리스트 */
+.playlist {
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    padding-bottom: 30px;
+}
+
+/* 영상 리스트 행 */
+.video-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* 영상 간 간격 */
+    flex-wrap: nowrap; /* 줄바꿈 방지 */
+}
+
+/* 유튜브 영상 크기 반응형 */
+.video-container-performance {
+    width: 50%; /* 두 개씩 배치 */
+    position: relative;
+    padding-bottom: 28%; /* 16:9 비율 유지 */
+    height: 0;
+}
+
+.video-container-performance iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+/* ======== performance_videos_mbship.html CSS ======== */
 
 /* 🎬 멤버십 전용 영상 리스트 - PC 가로 스크롤 적용 */
+
+
+.performance-videos-mbship-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-align: center;
+    max-width: 90%;
+    word-wrap: break-word;
+}
 
 /* 멤버십 각 연도별 공연 리스트 */
 .mb-perform-playlist {
@@ -260,6 +284,7 @@ body {
     padding: 15px;
     border-radius: 10px;
     padding-bottom: 30px;
+    margin-top: 10px;
 }
 
 /* 멤버십 플레이리스트 컨테이너 수정 */
@@ -281,8 +306,10 @@ body {
 
 
 /* 비디오 제목 스타일 */
-.video-title {
+.mb-video-title {
     padding: 8px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     font-size: 14px;
     font-weight: bold;
     color: white;
@@ -322,6 +349,7 @@ footer {
     text-align: center;
 }
 
+
 /* 🛠 반응형 디자인 적용 */
 @media (max-width: 768px) {
     .grid {
@@ -330,6 +358,16 @@ footer {
 
     .video-container {
         width: 100%;
+    }
+
+    .video-row {
+        flex-direction: column; /* 📌 모바일에서는 세로 정렬 */
+        gap: 20px; /* 영상 간격 추가 */
+    }
+
+    .video-container-performance {
+        width: 100%; /* 📌 모바일에서 가로폭 전체 차지 */
+        padding-bottom: 56.25%; /* 📌 16:9 비율 유지 */
     }
 
     .teamname {
@@ -410,11 +448,21 @@ footer {
 
 @media (max-width: 480px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr); /* 📌 작은 모바일에서도 2x2 유지 */
+        grid-template-columns: repeat(2, 1fr); /* 📌 모바일에서도 2x2 유지 */
     }
 
     .video-container {
         width: 100%;
+    }
+
+    .video-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .video-container-performance {
+        width: 100%;
+        padding-bottom: 56.25%;
     }
 
     .section {

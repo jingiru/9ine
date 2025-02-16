@@ -187,9 +187,9 @@ body {
 
 
 .video-container {
-    width: 80%;
+    width: 100%;
     max-width: 800px;
-    margin: 30px auto; /* 위아래 여백 추가 */
+    margin: 10px auto; /* 위아래 여백 추가 */
     position: relative;
     padding-bottom: 35%; /* 16:9 비율 유지 */
     height: 0;
@@ -320,13 +320,16 @@ body {
 /* 푸터 */
 footer {
     text-align: center;
-    padding-top: 10px;
 }
 
 /* 🛠 반응형 디자인 적용 */
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: repeat(2, 1fr); /* 📌 모바일에서도 2x2 유지 */
+    }
+
+    .video-container {
+        width: 100%;
     }
 
     .teamname {
@@ -408,6 +411,10 @@ footer {
 @media (max-width: 480px) {
     .grid {
         grid-template-columns: repeat(2, 1fr); /* 📌 작은 모바일에서도 2x2 유지 */
+    }
+
+    .video-container {
+        width: 100%;
     }
 
     .section {

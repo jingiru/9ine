@@ -27,7 +27,7 @@ function requestAccess() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                window.location.href = data.redirect_url;  // 🔗 유튜브 페이지로 이동
+                window.location.href = data.redirect_url;  // 🔄 특정 페이지로 이동
             } else {
                 document.getElementById("auth-error").innerText = "❌ 인증 코드가 올바르지 않습니다.";
                 document.getElementById("auth-error").style.display = "block"; // 오류 메시지 표시

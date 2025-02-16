@@ -15,7 +15,14 @@
             <strong>누구나 나인 상관없이 춤을 출 수 있다</strong>라는 모토로<br>
             8년째 춤을 추고 있는 대전의 유일한 교직원 댄스팀
         </p>
-        
+
+        <!-- 팀 소개 & 가입 신청 버튼 -->
+        <div class="button-container">
+            <a href="{{ url_for('info') }}" class="team-button">팀 소개</a>
+            <a href="https://forms.gle/fZEiUVbsmFS6bucY7" target="_blank" class="team-button">가입 신청</a>
+        </div>
+
+
         <div class="grid">
             <section id="performance" class="section" onclick="location.href='{{ url_for('performance_videos') }}'">
                 <h2 class="section-title">공연 영상</h2>

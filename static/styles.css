@@ -43,6 +43,54 @@ body {
     line-height: 1.5;
 }
 
+
+/* 팀 소개 & 가입 신청 버튼 컨테이너 */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* 버튼 사이 간격 조정 */
+    width: 100%;
+    max-width: 800px;
+    margin: 15px auto;
+}
+
+/* 팀 소개 및 가입 신청 버튼 스타일 */
+.team-button {
+    flex: 1; /* 버튼 크기 균등하게 */
+    max-width: 52%; /* 버튼 가로 길이를 섹션과 동일하게 맞춤 */
+    padding: 12px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    border: 2px solid #e74a57;
+}
+
+/* 팀 소개 버튼 (흰색 배경) */
+.team-button:first-child {
+    background-color: white;
+    color: #e74a57;
+}
+
+/* 가입 신청 버튼 (빨간 배경) */
+.team-button:last-child {
+    background-color: #e74a57;
+    color: white;
+}
+
+/* 호버 효과 */
+.team-button:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+
+
+
+
+
 /* ✅ PC에서 2x2 유지, 모바일에서는 1열 자동 적용 */
 .grid {
     display: grid;
@@ -84,7 +132,7 @@ body {
 /* 섹션 호버 효과 */
 .section:hover {
     background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 /* 연도별 재생목록 컨테이너 */

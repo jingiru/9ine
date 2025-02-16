@@ -1,9 +1,8 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 
 app = Flask(__name__)
 
 VALID_AUTH_CODE = "9ineVIP"
-SECRET_URL = "https://www.youtube.com/playlist?list=PLKK7CKrIcg5VUwbQ4srbldARWuER8QmmE"
 
 @app.route('/')
 def index():
@@ -13,9 +12,10 @@ def index():
 def home():
     return render_template('index.html')
 
-@app.route('/practice-videos')
-def practice_videos():
-    return render_template('practice_videos.html')
+@app.route('/info')
+def info():
+    return render_template('info.html')
+
 
 @app.route('/verify', methods=['POST'])
 def verify():
@@ -23,14 +23,23 @@ def verify():
     auth_code = data.get('auth_code')
 
     if auth_code == VALID_AUTH_CODE:
-        return jsonify(success=True, redirect_url=SECRET_URL)  # ✅ 올바른 경우 유튜브 링크 반환
+        return jsonify(success=True, redirect_url=url_for('performance_videos_mbship'))  # 🔄 페이지 이동
     else:
-        return jsonify(success=False)  # ❌ 잘못된 코드일 경우
+        return jsonify(success=False)  # ❌ 인증 실패 시 JSON 응답
 
 
 @app.route('/performance-videos')
 def performance_videos():
     return render_template('performance_videos.html')
+
+@app.route('/performance-videos-mbship')
+def performance_videos_mbship():
+    return render_template('performance_videos_mbship.html')  # 🔒 회원 전용 페이지
+
+
+@app.route('/practice-videos')
+def practice_videos():
+    return render_template('practice_videos.html')
 
 @app.route('/board')
 def board():

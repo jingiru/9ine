@@ -133,7 +133,7 @@ body {
     transform: scale(1.03);
 }
 
-.video-container {
+.index-video-container {
     width: 100%;
     max-width: 800px;
     margin: 10px auto; /* 위아래 여백 추가 */
@@ -142,7 +142,7 @@ body {
     height: 0;
 }
 
-.video-container iframe {
+.index-video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -254,7 +254,7 @@ body {
 }
 
 /* 유튜브 영상 크기 반응형 */
-.video-container-performance {
+.video-container {
     width: 50%;  /* 개별 영상 크기 */
     height: 280px;  /* 개별 영상 크기 */
     border-radius: 10px;
@@ -264,7 +264,7 @@ body {
     flex-direction: column;
 }
 
-.video-container-performance iframe {
+.video-container iframe {
     width: 99%;
     height: 99%;
     border-radius: 10px;
@@ -360,6 +360,28 @@ body {
 
 
 
+
+/* ======== practice_videos.html CSS ======== */
+
+
+.practice-videos-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-align: center;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+
+
+/* =========================== */
+
+
+
+
 /* 푸터 */
 footer {
     text-align: center;
@@ -382,7 +404,7 @@ footer {
         gap: 20px; /* 영상 간격 추가 */
     }
 
-    .video-container-performance {
+    .video-container {
         width: 100%; /* 📌 모바일에서 가로폭 전체 차지 */
         height: 420px;
         padding-bottom: 0; /* 📌 16:9 비율 유지 */
@@ -470,7 +492,7 @@ footer {
         gap: 15px;
     }
 
-    .video-container-performance {
+    .video-container {
         width: 100%;
         height: 240px;
         padding-bottom: 0;

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9ine | 공연 영상</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="practice-videos-title">연습 영상</h1>
+        <div class="button-container">
+            <button class="home-btn" onclick="goHome()">메인으로</button>
+            <button class="view-all-btn" onclick="requestAccess()">전체 영상 페이지(회원 전용)</button>
+        </div>
+
+        <!-- 오류 메시지 표시 -->  
+        <p id="auth-error" class="error-message" style="display: none; color: red;"></p>
+        
+
+        <div class="playlist-container">
+
+            <div class="playlist">
+                <h2>🌟 Ayo 챌린지 (250212) 🌟</h2>
+                <div class="video-row">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/wMofJNyMB3A" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/ZUi-DV6tpbU" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            <p>&copy; 2025 대전교직원댄스동호회 9ine</p>
+            <p>All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,6 +1,17 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
+import smtplib
+from email.mime.text import MIMEText
 
 app = Flask(__name__)
+
+SMTP_SERVER = "smtp.gmail.com"  # 본인의 SMTP 서버 사용 (hanmail은 smtp.daum.net)
+SMTP_PORT = 587
+EMAIL_SENDER = "your_email@gmail.com"  # 본인의 이메일
+EMAIL_PASSWORD = "your_email_password"  # 앱 비밀번호 사용 (일반 비밀번호 X)
+EMAIL_RECEIVER = "skyjjw79@hanmail.net"  # 공연 섭외 요청 받을 이메일
+
+
+
 
 VALID_AUTH_CODE = "9ineVIP"
 
@@ -49,6 +60,57 @@ def board():
 def contact():
     return render_template('contact.html')
 
+
+@app.route('/send-email', methods=['POST'])
+def send_email():
+    try:
+        data = request.get_json()
+        name = data.get("name")
+        email = data.get("email")
+        phone = data.get("phone")
+        event = data.get("event")
+        date = data.get("date")
+        message = data.get("message")
+
+        email_subject = f"🎤 [공연 섭외 요청] {event} ({date})"
+        email_body = f"""
+        공연 섭외 요청이 접수되었습니다.
+        
+        📌 요청자: {name}
+        📧 이메일: {email}
+        📞 연락처: {phone}
+        🎭 공연 행사명: {event}
+        📅 공연 날짜: {date}
+
+        💬 추가 요청 사항:
+        {message}
+        """
+
+        msg = MIMEText(email_body)
+        msg['Subject'] = email_subject
+        msg['From'] = EMAIL_SENDER
+        msg['To'] = EMAIL_RECEIVER
+
+        server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+        server.starttls()
+        server.login(EMAIL_SENDER, EMAIL_PASSWORD)
+        server.sendmail(EMAIL_SENDER, EMAIL_RECEIVER, msg.as_string())
+        server.quit()
+
+        return jsonify(success=True)
+
+    except Exception as e:
+        print(f"Error: {e}")
+        return jsonify(success=False)
+        
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
+
+
+
+
+
+
 

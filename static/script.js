@@ -38,4 +38,41 @@ function requestAccess() {
 }
 
 
+// 이메일 전송을 위한 AJAX 요청
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
 
+    if (form) {
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const formData = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                event: document.getElementById("event").value,
+                date: document.getElementById("date").value,
+                message: document.getElementById("message").value
+            };
+
+            fetch("/send-email", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById("success-message").style.display = "block";
+                    form.reset();
+                } else {
+                    document.getElementById("error-message").style.display = "block";
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                document.getElementById("error-message").style.display = "block";
+            });
+        });
+    }
+});

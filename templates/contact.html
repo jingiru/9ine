@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9ine | 공연 섭외 요청</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🎤 공연 섭외 요청</h1>
+        <p>아래 정보를 입력하시면 담당자가 확인 후 연락드리겠습니다.</p>
+
+        <form id="contact-form" class="contact-form">
+            <label for="name">이름 *</label>
+            <input type="text" id="name" name="name" class="contact-input" required>
+
+            <label for="email">이메일 *</label>
+            <input type="email" id="email" name="email" class="contact-input" required>
+
+            <label for="phone">연락처 *</label>
+            <input type="tel" id="phone" name="phone" class="contact-input" required>
+
+            <label for="event">공연 행사명 *</label>
+            <input type="text" id="event" name="event" class="contact-input" required>
+
+            <label for="date">공연 날짜 *</label>
+            <input type="date" id="date" name="date" class="contact-input" required>
+
+            <label for="message">추가 요청 사항</label>
+            <textarea id="message" name="message" class="contact-textarea" rows="4"></textarea>
+
+            <button type="submit" class="contact-button">보내기</button>
+        </form>
+
+        <p id="success-message" class="contact-message success-message">✅ 요청이 정상적으로 접수되었습니다.</p>
+        <p id="error-message" class="contact-message error-message">❌ 요청을 보내는 중 오류가 발생했습니다.</p>
+
+        <button class="home-btn" onclick="goHome()">메인으로</button>
+
+        <footer>
+            <p>&copy; 2025 대전교직원댄스동호회 9ine</p>
+        </footer>
+    </div>
+</body>
+</html>

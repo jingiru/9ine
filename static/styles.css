@@ -579,9 +579,9 @@ body {
 }
 
 /* 열 크기 고정 */
-.title-col { width: 15%; }  /* 제목 */
-.author-col { width: 20%; } /* 작성자 */
-.content-col { width: 65%; } /* 내용 */
+.title-col { width: 17%; }  /* 제목 */
+.author-col { width: 28%; } /* 작성자 */
+.content-col { width: 55%; } /* 내용 */
 
 .post-row {
     cursor: pointer;

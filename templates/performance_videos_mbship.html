@@ -5,21 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>9ine | 회원 전용 공연 영상</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>  <!-- JS 파일 연결 -->
 </head>
 <body>
     <div class="container">
         <h1 class="teamname">회원 전용 공연 영상</h1>
 
-        <div class="playlist-container">
-            <div class="playlist">
+        <div class="member-playlist-container">
+            <div class="mb-perform-playlist">
                 <h2>📅 2024년 공연</h2>
-                <div class="video-row">
-                    <div class="video-container-performance">
-                        <iframe src="https://www.youtube.com/embed/EXAMPLE1" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-container-performance">
-                        <iframe src="https://www.youtube.com/embed/EXAMPLE2" allowfullscreen></iframe>
-                    </div>
+                <div class="member-video-list">
+                    <!-- JS에서 자동으로 영상 목록 추가 -->
                 </div>
             </div>
         </div>

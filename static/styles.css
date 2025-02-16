@@ -19,6 +19,7 @@ body {
     align-items: center;
     justify-content: flex-start; /* 📌 상단 정렬 */
     padding-top: 20px; /* 📌 위쪽 여백 추가 */
+    margin: 0 auto; /* 추가: 중앙 정렬 */
 }
 
 /* 팀명 (로고) */
@@ -156,6 +157,9 @@ body {
     padding-bottom: 30px;
 }
 
+
+
+
 /* 영상 리스트 행 */
 .video-row {
     display: flex;
@@ -246,6 +250,72 @@ body {
 
 
 
+/* 🎬 멤버십 전용 영상 리스트 - PC 가로 스크롤 적용 */
+
+/* 멤버십 각 연도별 공연 리스트 */
+.mb-perform-playlist {
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    padding-bottom: 30px;
+}
+
+/* 멤버십 플레이리스트 컨테이너 수정 */
+.member-playlist-container {
+    width: 100%;
+}
+
+.member-video-list {
+    display: flex;
+    overflow-x: auto; /* 가로 스크롤 활성화 */
+    overflow-y: hidden;
+    white-space: nowrap;
+    gap: 10px;
+    padding: 10px 0;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
+}
+
+
+/* 비디오 제목 스타일 */
+.video-title {
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    white-space: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* 🎬 가로로 나열되는 개별 영상 */
+.member-video-container {
+    flex: 0 0 auto;
+    width: 300px;  /* 개별 영상 크기 */
+    height: 200px;
+    scroll-snap-align: start;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1); /* 영상 간 구분 */
+    display: flex;
+    flex-direction: column;
+}
+
+.member-video-container iframe {
+    width: 98%;
+    height: 98%;
+    border-radius: 10px;
+}
+
+/* =========================== */
+
+
 
 /* 푸터 */
 footer {
@@ -284,7 +354,56 @@ footer {
         padding-bottom: 56.25%;
     }
 
+
+
+    /* 멤버쉽 영상에 대한 크기 조절 */
+
+
+    .mb-perform-playlist {
+        padding: 5px;
+    }
+
+    .member-playlist-container {
+        width: 90%;
+    }
+
+    .member-playlist {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .member-video-list {
+        flex-direction: column; /* 세로 정렬 */
+        overflow-x: hidden;
+        overflow-y: auto; /* 🎯 내부에서만 세로 스크롤 */
+        max-height: 420px; /* 🎯 한 번에 2개 영상 보이도록 높이 고정 */
+        padding-bottom: 10px;
+        scrollbar-width: thin; /* Firefox용 */
+        scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+    }
+
+    .member-video-list::-webkit-scrollbar {
+        width: 100%; /* 📌 모바일에서는 전체 너비 사용 */
+        height: 200px; /* 🎯 한 번에 2개씩 보이도록 고정 */
+    }
+
+    .member-video-list::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.5); /* 스크롤바 색상 */
+        border-radius: 5px;
+    }
+
+    .member-video-container {
+        width: 100%; /* 모바일에서는 전체 너비 */
+        height: 200px; /* 🎯 한 번에 2개씩 보이도록 고정 */
+    }
+
+
 }
+
 
 @media (max-width: 480px) {
     .grid {
@@ -310,5 +429,44 @@ footer {
         font-size: clamp(22px, 4vw, 30px);
         margin-top: -5px;
     }
+    
+    /* 멤버쉽 영상에 대한 크기 조절 */
+
+
+    .mb-perform-playlist {
+        padding: 5px;
+    }
+
+    .member-playlist-container {
+        width: 90%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .member-playlist {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .member-video-list {
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 420px; /* 🎯 높이 고정 */
+        padding-bottom: 5px;
+    }
+
+    .member-video-container {
+        width: 95%;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .member-video-container iframe {
+        width: 98.5%;
+        height: 98.5%;
+        border-radius: 8px;
+    }
+
 
 }

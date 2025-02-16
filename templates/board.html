@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티 게시판</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="board-container">
+        <h1>📢 커뮤니티 게시판</h1>
+
+        <div class="button-container">
+            <button class="home-btn" onclick="location.href='/'">🏠 메인으로</button>
+            <button class="write-btn" onclick="location.href='{{ url_for('write') }}'">📝 글쓰기</button>
+        </div>
+
+        <table class="board-table">
+            <thead>
+                <tr>
+                    <th class="title-col">제목</th>
+                    <th class="author-col">작성자</th>
+                    <th class="content-col">내용</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                    <tr class="post-row" onclick="location.href='{{ url_for('post', post_id=post.id) }}'">
+                        <td>{{ post.title }}</td>
+                        <td>{{ post.author }}</td>
+                        <td>
+                            {% if post.content|length > 30 %}
+                                {{ post.content[:30] }}...
+                            {% else %}
+                                {{ post.content }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3">아직 게시글이 없습니다. 첫 번째 글을 작성해보세요!</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <button class="home-btn" onclick="location.href='/'">🏠 메인으로</button>
+    </div>
+</body>
+</html>

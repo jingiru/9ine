@@ -479,7 +479,151 @@ body {
 
 
 
-/* =========================== */
+
+/* ======== board.html CSS ======== */
+.board-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.board-h1 {
+    font-size: 24px;
+    color: #e74a57;
+}
+
+/* 버튼 컨테이너 - 한 줄 정렬 */
+.board-button-container {
+    display: flex;
+    justify-content: center; /* 버튼 중앙 정렬 */
+    align-items: center; /* 수직 정렬 */
+    gap: 10px; /* 버튼 간 간격 */
+    margin-top: 15px;
+    width: 100%; /* 버튼이 줄을 차지하도록 설정 */
+}
+
+.write-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #e74a57;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    width: 100%;
+    max-width: 150px;
+}
+
+.write-button-container {
+    display: flex;
+    justify-content: space-between; /* 양 끝 정렬 */
+    align-items: center; /* 수직 정렬 */
+    gap: 10px; /* 버튼 간 간격 */
+    margin-top: 15px;
+    width: 100%; /* 버튼이 줄을 차지하도록 설정 */
+    max-width: 500px; /* 📌 폼과 같은 너비로 맞추기 */
+}
+
+.submit-btn, .back-btn {
+    flex: 1; /* 버튼 크기 균등하게 */
+    max-width: 200px; /* 버튼 최대 너비 제한 */
+    padding: 10px 15px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+/* 게시글 등록 버튼 - 붉은 계열 */
+.submit-btn {
+    background: #e74a30 !important;
+    color: white !important;
+}
+
+.submit-btn:hover {
+    background: #ff5f43 !important;
+}
+
+/* 돌아가기 버튼 - 비슷한 계열이지만 더 어두운 색 */
+.back-btn {
+    background: #d63f4a !important;
+    color: white !important;
+}
+
+.back-btn:hover {
+    background: #b83240 !important;
+}
+
+/* 게시판 테이블 스타일 */
+.board-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.board-table th, .board-table td {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+
+.board-table th {
+    background-color: #e74a57;
+    color: white;
+}
+
+/* 열 크기 고정 */
+.title-col { width: 15%; }  /* 제목 */
+.author-col { width: 20%; } /* 작성자 */
+.content-col { width: 65%; } /* 내용 */
+
+.post-row {
+    cursor: pointer;
+}
+
+.post-row:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* === 🛠 글쓰기 폼 정렬 === */
+.write-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 94.5%;
+    max-width: 400px;
+    margin: 0 auto; /* 📌 폼 전체 중앙 정렬 */
+}
+
+.write-form input, .write-form textarea {
+    width: 94.5%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* 글쓰기 버튼 스타일 */
+.write-form button {
+    padding: 10px;
+    background-color: #e74a57;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.write-form button:hover {
+    background-color: #ff5f73;
+}
+
 
 
 
@@ -499,7 +643,7 @@ body {
 /* iframe을 부모 컨테이너에 맞추기 */
 .form-container iframe {
     width: 100%;
-    height: 1500px; /* Google Forms의 높이 조정 */
+    height: 1750px; /* Google Forms의 높이 조정 */
     border: none;
 }
 

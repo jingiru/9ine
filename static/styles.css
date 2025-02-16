@@ -408,6 +408,7 @@ body {
 /* 멤버십 플레이리스트 컨테이너 수정 */
 .member-playlist-container {
     width: 100%;
+    margin-right: 10px;
 }
 
 .member-video-list {

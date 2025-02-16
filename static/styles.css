@@ -153,6 +153,108 @@ body {
 
 
 
+
+/* ======== info.html CSS ======== */
+
+
+/* 🎨 팀 소개 섹션 */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* ✅ 중앙 정렬 */
+    justify-content: center;
+    width: 100%;
+}
+.info-teamname {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #e74a57;
+    margin-bottom: -10px;
+}
+.info-team-description {
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+
+/* 🏆 공통 카드 스타일 */
+.info-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 12px;
+    width: 685px;
+    text-align: left;
+}
+.section-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 📋 리스트 스타일 */
+.info-list {
+    list-style: none;
+    padding: 0;
+}
+.info-list li {
+    font-size: 18px;
+    padding: 5px 0;
+}
+
+/* 🌟 활동 이력 */
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.activity-item {
+    display: flex;
+    align-items: center;  /* ✅ 날짜와 이력을 수직 중앙 정렬 */
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 8px;
+}
+.activity-date {
+    font-weight: bold;
+    color: #ff7eb3;
+}
+
+.activity-desc {
+    flex-grow: 1;
+    display: flex; /* ✅ 유튜브 아이콘과 텍스트를 같은 라인에 정렬 */
+    align-items: center;
+    gap: 5px; /* ✅ 글자와 아이콘 간격 조정 */
+}
+
+
+/* 유튜브 링크 아이콘 스타일 */
+.youtube-link {
+    display: flex; /* ✅ 아이콘을 수직 중앙 정렬 */
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px; /* ✅ 아이콘이 너무 멀어지지 않도록 조정 */
+}
+
+.youtube-icon {
+    width: clamp(18px, 1.1vw, 24px);; /* ✅ 크기 조정 */
+    vertical-align: middle; /* ✅ 텍스트와 수직 중앙 정렬 */
+    transition: transform 0.2s ease-in-out;
+}
+
+.youtube-link:hover .youtube-icon {
+    transform: scale(1.2); /* 마우스 오버 시 확대 */
+}
+
+
+
+
+
+
+
 /* ======== performance_videos.html CSS ======== */
 
 .performance-videos-title {
@@ -399,6 +501,30 @@ footer {
         padding-bottom: 56.25%;
     }
 
+    .teamimage {
+        width: 100%;
+    }
+
+    .info-card {
+        width: 90%;
+    }
+
+    .info-team-description {
+        font-size: clamp(12px, 1.7vw, 16px);
+    }
+
+    .info-list li {
+        font-size: clamp(12px, 1.5vw, 16px);
+    }
+
+    .activity-date {
+        font-size: clamp(12px, 1.5vw, 16px);
+    }
+
+    .activity-desc {
+        font-size: clamp(12px, 1.5vw, 16px);
+    }
+
     .video-row {
         flex-direction: column; /* 📌 모바일에서는 세로 정렬 */
         gap: 20px; /* 영상 간격 추가 */
@@ -486,6 +612,31 @@ footer {
     .video-container {
         width: 100%;
     }
+
+    .teamimage {
+        width: 100%;
+    }
+
+    .info-card {
+        width: 90%;
+    }
+
+    .info-team-description {
+        font-size: clamp(13px, 1.2vw, 17px);
+    }
+
+    .info-list li {
+        font-size: clamp(13px, 1.2vw, 17px);
+    }
+
+    .activity-date {
+        font-size: clamp(12px, 1.1vw, 16px);
+    }
+
+    .activity-desc {
+        font-size: clamp(12px, 1.1vw, 16px);
+    }
+
 
     .video-row {
         flex-direction: column;

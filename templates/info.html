@@ -9,14 +9,123 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="teamname">팀 소개</h1>
-        <p class="team-description">
-            9ine은 8년째 활동을 이어오고 있는 대전의 유일한 교직원 댄스팀입니다.<br>
-            "누구나 나인 상관없이 춤을 출 수 있다"라는 모토 아래 다양한 공연을 진행하고 있습니다.
-        </p>
-        <p>
-            정기 연습 일정 및 공연 활동에 대한 자세한 내용은 아래 문의를 통해 확인해주세요!
-        </p>
+
+        <!-- 팀 소개 -->
+        <section class="info-section">
+            <h1 class="info-teamname">대전교직원댄스동호회 <span class="highlight">9ine</span></h1>
+            <p class="info-team-description">
+                <strong>“누구나 나인 상관없이 춤을 출 수 있다”</strong>는 모토 아래 <br>
+                끼많은 선생님들과 8년째 춤을 추고 있는 <br>
+                대전의 유일한 교직원 댄스팀입니다. <br>
+                다양한 공연과 지역 예술인 협력 활동을 통해 <br>
+                학교 문화를 긍정적으로 바꾸고 있습니다.
+            </p>
+        </section>
+
+
+        <!-- 팀 사진 -->
+        <div>
+            <img src="{{ url_for('static', filename='9ine.jpg') }}" class="teamimage" width="720px" style="border-radius: 10px;">
+        </div>
+
+
+        <!-- 📌 동아리 활동 소개 -->
+        <section class="info-card">
+            <h2 class="section-title">📌 동아리 활동 소개</h2>
+            <ul class="info-list">
+                <li>▶️ <strong>창단:</strong> 2017년 11월 11일</li>
+                <li>📅 <strong>정기 연습:</strong> 매주 수요일 저녁 6~8시</li>
+                <li>📍 <strong>연습 장소:</strong> 장대동 SDT 연습실</li>
+                <li>💰 <strong>회비:</strong> 4개월에 7만원</li>
+                <li>🏆 <strong>직무 연수:</strong> 활동 시 15시간 인정 (사업 선정 시)</li>
+            </ul>
+        </section>
+
+        <!-- 🌟 주요 활동 이력 -->
+        <section class="info-card">
+            <h2 class="section-title">🌟 주요 활동 이력</h2>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <span class="activity-desc">🎉 <strong>매년 연말 파티(공연) 개최</strong></span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-desc">🏡 <strong>마을 축제 찬조</strong>(상대, 노은, 관평, 봉명, 대화 등)</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-date">24.10.23</span>
+                    <span class="activity-desc">&nbsp;📢 <strong>제8회 학교예술교육박람회</strong> 개막식 공연
+                        <a href="https://youtu.be/EKvg1i_7asA" target="_blank" class="youtube-link">
+                            <img src="{{ url_for('static', filename='youtube_logo.png') }}" alt="YouTube" class="youtube-icon">
+                        </a>
+                    </span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-date">24.09.26</span>
+                    <span class="activity-desc">&nbsp;🎶 <strong>천안흥타령춤축제</strong> 프린지 공연
+                        <a href="https://youtu.be/rz9hQ0CiOZM?si=zS50ZClSjX7Rk_E9&t=260" target="_blank" class="youtube-link">
+                            <img src="{{ url_for('static', filename='youtube_logo.png') }}" alt="YouTube" class="youtube-icon">
+                        </a>
+                    </span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-date">24.06.19</span>
+                    <span class="activity-desc">&nbsp;🕺 스맨파 비앰비셔스 리더 <strong>오천</strong> 특강
+                        <a href="https://www.youtube.com/watch?v=MDLXdBepUW8" target="_blank" class="youtube-link">
+                            <img src="{{ url_for('static', filename='youtube_logo.png') }}" alt="YouTube" class="youtube-icon">
+                        </a>
+                    </span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-date">23.09.13</span>
+                    <span class="activity-desc">&nbsp;📢 <strong>손웅정</strong> 감독 특강 식전 공연
+                        <a href="https://www.youtube.com/watch?v=DLoXxQjFV60" target="_blank" class="youtube-link">
+                            <img src="{{ url_for('static', filename='youtube_logo.png') }}" alt="YouTube" class="youtube-icon">
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=8F7JjqvQNHY" target="_blank" class="youtube-link">
+                            <img src="{{ url_for('static', filename='youtube_logo.png') }}" alt="YouTube" class="youtube-icon">
+                        </a>
+                    </span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-date">22.05.29</span>
+                    <span class="activity-desc">&nbsp;🎤 <strong>대전교육청 TMI대전 출연</strong>
+                        <a href="https://youtu.be/JUoRh1R9Z6Y?si=ja_gsjF1SIxN8C7x" target="_blank" class="youtube-link">
+                            <img src="{{ url_for('static', filename='youtube_logo.png') }}" alt="YouTube" class="youtube-icon">
+                        </a>
+                    </span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-date">21.04.14</span>
+                    <span class="activity-desc">&nbsp;📺 <strong>MBC 오늘 M 출연</strong>
+                        <a href="https://youtu.be/dbUNfKYO4Ag?si=Rj-zfnUfYWOB4mYW" target="_blank" class="youtube-link">
+                            <img src="{{ url_for('static', filename='youtube_logo.png') }}" alt="YouTube" class="youtube-icon">
+                        </a>
+                    </span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-date">21.02.01</span>
+                    <span class="activity-desc">&nbsp;📰 <strong>더케이매거진 꿈너머꿈 인터뷰</strong>
+                        <a href="https://www.youtube.com/watch?v=JV-FQzBGBUM" target="_blank" class="youtube-link">
+                            <img src="{{ url_for('static', filename='youtube_logo.png') }}" alt="YouTube" class="youtube-icon">
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🤝 협력 사업 -->
+        <section class="info-card">
+            <h2 class="section-title">🤝 협력 사업</h2>
+            <ul class="info-list">
+                <li>🎨 <strong>대전문화재단</strong> 생활문화활동 지원 사업</li>
+                <li>🏫 <strong>대전광역시교육청</strong> 교사예술동아리 지원 사업</li>
+                <li>🎭 <strong>유성구청</strong> 문화예술동아리 지원 사업</li>
+                <li>📚 <strong>대전교육연수원</strong> 학교성장자율연수 (직무 연수 15시간)</li>
+            </ul>
+        </section>
+
+
+        <button class="home-btn" onclick="goHome()">메인으로</button>
 
         <footer>
             <p>&copy; 2025 대전교직원댄스동호회 9ine</p>

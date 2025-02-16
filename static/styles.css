@@ -492,6 +492,12 @@ footer {
 
 /* 🛠 반응형 디자인 적용 */
 @media (max-width: 768px) {
+
+    .index-video-container {
+        width: 100%;
+        padding-bottom: 56.25%;
+    }
+
     .grid {
         grid-template-columns: repeat(2, 1fr); /* 📌 모바일에서도 2x2 유지 */
     }
@@ -605,6 +611,11 @@ footer {
 
 
 @media (max-width: 480px) {
+    .index-video-container {
+        width: 100%;
+        padding-bottom: 56.25%;
+    }
+
     .grid {
         grid-template-columns: repeat(2, 1fr); /* 📌 모바일에서도 2x2 유지 */
     }

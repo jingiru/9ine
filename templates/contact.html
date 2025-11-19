@@ -13,8 +13,9 @@
         <h1>🎉 STRIKE VOL.3 공연 정보</h1>
         <p>2025년 12월 6일 토요일 저녁 7시 (입장 6시 40분)</p>
 
-        <!-- 여기(form-container)에 포스터와 버튼 2개를 배치 -->
-        <div class="form-container" style="text-align:center;">
+        <!-- 세로 정렬 컨테이너 -->
+        <div class="form-container"
+             style="text-align:center; display:flex; flex-direction:column; align-items:center;">
 
             <!-- 공연 관람 신청 버튼 (위) -->
             <a href="https://forms.gle/1wF8T36jDNMB9Qqk7" target="_blank" 
@@ -24,9 +25,9 @@
             </a>
 
             <!-- 포스터 -->
-            <div class="poster-container">
-                <img src="/static/strike.png" alt="STRIKE VOL.3 포스터" style="width:480px height:auto;">
-                <!-- ↑ 이 부분을 실제 포스터 파일 경로로 교체하세요 -->
+            <div class="poster-container" style="margin:20px 0;">
+                <img src="/static/strike.png" alt="STRIKE VOL.3 포스터" 
+                     style="width:100%; max-width:480px; height:auto;">
             </div>
 
             <!-- 공연 관람 신청 버튼 (아래) -->
@@ -37,7 +38,7 @@
             </a>
         </div>
 
-        <!-- 홈 버튼 그대로 유지 -->
+        <!-- 홈 버튼 -->
         <button class="home-btn" onclick="location.href='/'">🏠 메인으로</button>
 
         <footer>
